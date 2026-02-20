@@ -155,7 +155,7 @@ def render(
     style: RenderStyle = RenderStyle.STUDIO,
     target_size: int = 1024,
     num_inference_steps: int = 25,
-    strength: float = 0.4,
+    strength: float = 0.47,
     guidance_scale: float = 7.5,
 ):
     pipe = get_render_pipe()
@@ -202,7 +202,7 @@ def render(
 async def render_image(
     file: UploadFile = File(...),
     num_inference_steps: int = 25,
-    strength: float = 0.4,
+    strength: float = 0.47,
     guidance_scale: float = 7.5,
 ):
     """
@@ -211,7 +211,7 @@ async def render_image(
     Parameters:
     - file: Image file to render
     - num_inference_steps: Number of inference steps (default: 25)
-    - strength: Transformation strength (default: 0.4)
+    - strength: Transformation strength (default: 0.47)
     - guidance_scale: Guidance scale (default: 7.5)
     """
     try:
