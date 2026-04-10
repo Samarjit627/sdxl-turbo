@@ -51,7 +51,7 @@ app = FastAPI(title="SDXL Image Renderer API")
 # Configure CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://axis5-dfm.netlify.app"],
+    allow_origins=["https://axis5-dfm.netlify.app", "http://localhost:5173"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -155,8 +155,8 @@ def render(
     style: RenderStyle = RenderStyle.STUDIO,
     target_size: int = 1024,
     num_inference_steps: int = 25,
-    strength: float = 0.47,
-    guidance_scale: float = 7.5,
+    strength: float = 0.48,
+    guidance_scale: float = 8.0,
 ):
     pipe = get_render_pipe()
     if pipe is None:
@@ -202,8 +202,8 @@ def render(
 async def render_image(
     file: UploadFile = File(...),
     num_inference_steps: int = 25,
-    strength: float = 0.47,
-    guidance_scale: float = 7.5,
+    strength: float = 0.48,
+    guidance_scale: float = 8.0,
 ):
     """
     Upload an image and receive a rendered version using SDXL.
